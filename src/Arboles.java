@@ -5,12 +5,14 @@ import java.io.IOException;
 /**
  * @author Yasmin Chavez 16101
  * @author Ivette Cardona 16020
+ * En esta clase se encuentran todos los metodos a utilizar para la HDT9
  */
 public class Arboles {
 	Factory factory = new Factory();
 	iBinaryTree<String,String> var;
 	
-	public void s() throws IOException {
+	public void diccionario() throws IOException {
+		//Leer el diccionario ingles-español
 		String cadena = "";
 		BufferedReader txt = new BufferedReader(new FileReader("freedictEngSpa.txt"));
 		String palabra;
@@ -20,15 +22,17 @@ public class Arboles {
 			}
 		}
 	
+	//Utilizar el arbol elegido por el usuario 
 	public void seleccionArb(String entrada){
 		var=factory.choose(entrada);
 		if (var instanceof SplayTree){
-			System.out.println("ST");
+			System.out.println("El arbol elegido es el: SplayTree");
 		}else if (var instanceof TwoThreeBST){
-			System.out.println("2-3 Three");
+			System.out.println("El arbol elegifo es el: 2-3 Three");
 		}
 	}
 	
+	//Setear
 	public void ingresoData(String str){
 		String cadena = str.replaceAll(" ", ",");
 		cadena = cadena.replaceAll("\t", ",");
@@ -36,7 +40,9 @@ public class Arboles {
 		var.put(oracion[0], oracion[1]);
 	
 	}
-	public String lectura() throws IOException{
+	
+	//Abrir y leer el archivo que contiene la oracion a traducir
+	public String archTraduccion() throws IOException{
 		String cadena = ""; 
 		FileReader fr = new FileReader("traduccion.txt");
 		BufferedReader bf = new BufferedReader(fr);
@@ -45,7 +51,8 @@ public class Arboles {
 		return cadena;
 	}
 	
-	public String traduccion(String texto){
+	//Obtener la traduccion de la oración 
+	public String txtTraducido(String texto){
 		String traducido="";
 		texto = texto.toLowerCase();
 		String palabrasATraducir[] = texto.split("\\s+");

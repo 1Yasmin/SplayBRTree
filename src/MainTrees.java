@@ -18,7 +18,7 @@ public class MainTrees {
 	public static void main(String[] args) throws IOException {
 		
 		Arboles arb = new Arboles();
-		String traduc = arb.lectura();
+		String traduc = arb.archTraduccion();
 		
 		Scanner sc = new Scanner(System.in); 
 		String cadena;
@@ -50,10 +50,18 @@ public class MainTrees {
 				case 1: 
 					//El usuario eligio TreeSet
 					 entrada = "SplayTree";
+					 arb.seleccionArb(entrada);
+					 arb.diccionario();
+					 //Imprimir resultado
+					 System.out.println("La traducción es: \n" + arb.txtTraducido(traduc));
 					 break;
 				case 2: 
 					//El usuario eligio HashSet
 					entrada = "TwoThreeBST";
+					arb.seleccionArb(entrada);
+					arb.diccionario();
+					//Imprimir resultado
+					System.out.println("La traducción es: \n" + arb.txtTraducido(traduc));
 					break;
 				case 0: 
 					//El usuario eligio salir 
@@ -69,14 +77,11 @@ public class MainTrees {
 					 //Se guarda el valor
 					 eleccion = Integer.parseInt(sc.nextLine()); 
 			 }
+			 
 	}catch(Exception e){
 		//Mensaje de Error
 		System.out.println("Error");
 		}
-		
-		arb.seleccionArb(entrada);
-		arb.s();
-		System.out.println("La traducción es: \n" + arb.traduccion(traduc));
 	}
 
 }
