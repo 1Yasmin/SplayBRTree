@@ -30,7 +30,7 @@ public class MainTrees {
 		
 		//Utilizacion de buffered Reader para obtener los datos de un archivo de texto
 		try{
-		System.out.println("Por favor ingrese la direccion del documento que desee traducir: (Ej. C\\texto.txt):");
+		System.out.println("Por favor ingrese la direccion del documento que desee traducir:");
 		String doc = sc.nextLine(); 
 		FileReader fr = new FileReader(doc);
 		BufferedReader bf = new BufferedReader(fr);
