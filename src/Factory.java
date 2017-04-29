@@ -4,13 +4,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * 
+ * @author Yasmin Chavez 16101
+ * @author Ivette Cardona 16020
  */
 
-/**
- * @author ychav
- *
- */
 public class Factory {
 	
 	public iBinaryTree choose(String comp){

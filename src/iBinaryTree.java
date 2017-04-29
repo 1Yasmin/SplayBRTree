@@ -1,6 +1,6 @@
 /**
- * @author ychav
- *
+ * @author Yasmin Chavez 16101
+ * @author Ivette Cardona 16020
  */
 public interface iBinaryTree<K extends Comparable<K>, V> {
 	
