@@ -40,16 +40,7 @@ public class Arboles {
 		var.put(oracion[0], oracion[1]);
 	
 	}
-	
-	//Abrir y leer el archivo que contiene la oracion a traducir
-	public String archTraduccion() throws IOException{
-		String cadena = ""; 
-		FileReader fr = new FileReader("traduccion.txt");
-		BufferedReader bf = new BufferedReader(fr);
-		cadena = (bf.readLine());
-		bf.close(); // cierra el txt
-		return cadena;
-	}
+
 	
 	//Obtener la traduccion de la oración 
 	public String txtTraducido(String texto){

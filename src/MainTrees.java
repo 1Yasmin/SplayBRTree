@@ -10,6 +10,8 @@ import java.util.Scanner;
  */
 
 public class MainTrees {
+	
+	private static String cadenaT = "";
 
 	/**
 	 * @param args
@@ -18,21 +20,28 @@ public class MainTrees {
 	public static void main(String[] args) throws IOException {
 		
 		Arboles arb = new Arboles();
-		String traduc = arb.archTraduccion();
 		
 		Scanner sc = new Scanner(System.in); 
-		String cadena;
+		
 		String textoOriginal = "";
 		String textoTraducido = "";
 		String entrada = ""; 
 		int eleccion = -1; 
 		
 		//Utilizacion de buffered Reader para obtener los datos de un archivo de texto
-		FileReader fr = new FileReader("traduccion.txt");
+		try{
+		System.out.println("Por favor ingrese la direccion del documento que desee traducir: (Ej. C\\texto.txt):");
+		String doc = sc.nextLine(); 
+		FileReader fr = new FileReader(doc);
 		BufferedReader bf = new BufferedReader(fr);
-		cadena = (bf.readLine());
-		System.out.println("El texto que se desea traducir es: "+cadena);
+		cadenaT = (bf.readLine());
+		System.out.println("El texto que se desea traducir es: "+cadenaT);
 		bf.close(); // cierra el txt
+		}
+		catch(Exception e){
+			//Mensaje de Error
+			System.out.println("Direccion no valida");
+			}
 		
 		try{
 			 //Instrucciones para usuario
@@ -53,7 +62,7 @@ public class MainTrees {
 					 arb.seleccionArb(entrada);
 					 arb.diccionario();
 					 //Imprimir resultado
-					 System.out.println("La traducción es: \n" + arb.txtTraducido(traduc));
+					 System.out.println("La traducción es: \n" + arb.txtTraducido(cadenaT));
 					 break;
 				case 2: 
 					//El usuario eligio HashSet
@@ -61,7 +70,7 @@ public class MainTrees {
 					arb.seleccionArb(entrada);
 					arb.diccionario();
 					//Imprimir resultado
-					System.out.println("La traducción es: \n" + arb.txtTraducido(traduc));
+					System.out.println("La traducción es: \n" + arb.txtTraducido(cadenaT));
 					break;
 				case 0: 
 					//El usuario eligio salir 
