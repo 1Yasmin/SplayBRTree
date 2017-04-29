@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -38,21 +37,12 @@ public class Arboles {
 	
 	}
 	public String lectura() throws IOException{
-		String str = ""; 
-		/*
-		JFileChooser archivo = new JFileChooser();
-		archivo.showOpenDialog(null);
-		BufferedReader reader = new BufferedReader(new FileReader(archivo.getSelectedFile().getPath()));
-		String pal;
-		while(reader.ready()){
-			while ((pal=reader.readLine())!= null){
-				str=str+" "+pal;
-			}
-			System.out.println("El original es: " + str);
-			return str;
-		}
-		*/
-		return str;
+		String cadena = ""; 
+		FileReader fr = new FileReader("traduccion.txt");
+		BufferedReader bf = new BufferedReader(fr);
+		cadena = (bf.readLine());
+		bf.close(); // cierra el txt
+		return cadena;
 	}
 	
 	public String traduccion(String texto){
